@@ -6,6 +6,12 @@
 	<title>usage demo of emmet</title>
 </head>
 <body>
+	<!-- 兄弟：+ -->
+	<!-- demo: div+p+a -->
+	<div></div>
+	<p></p>
+	<a href=""></a>
+
 	<!-- 后代：> -->
 	<!-- demo:nav>ul>li -->
 	<nav>
@@ -14,12 +20,6 @@
 		</ul>
 	</nav>
 
-	<!-- 兄弟：+ -->
-	<!-- demo: div+p+a -->
-	<div></div>
-	<p></p>
-	<a href=""></a>
-
 	<!-- 上级：^ -->
 	<!-- demo: div+div>p>span+em^a -->
 	<div></div>
@@ -27,6 +27,20 @@
 		<p><span></span><em></em></p>
 		<a href=""></a>
 	</div>
+	<!-- demo: div+div>p>span+em^^bq -->
+	<div></div>
+	<div>
+		<p><span></span><em></em></p>
+	</div>
+	<blockquote></blockquote>
+
+	<!-- 乘法：* -->
+	<!-- demo: ul>li*3 -->
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 
 	<!-- 分组：() -->
 	<!-- demo: div>(header>ul>li*3>a)+(footer>p) -->
@@ -43,34 +57,35 @@
 		</footer>
 	</div>
 
-	<!-- 乘法：* -->
-	<!-- demo: ul>li*3 -->
-	<ul>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
+	<!-- ID & 类属性 -->
+	<!-- demo: #header -->
+	<div id="header"></div>
+	<!-- demo: .title -->
+	<div class="title"></div>
 
 	<!-- 自增符号：$ -->
-	<!-- demo: #title$*3 or .item$*3 or .item$@3*5-->
+	<!-- demo: #title$*3 -->
 	<div id="title1"></div>
 	<div id="title2"></div>
 	<div id="title3"></div>
-
-	<div class="item1"></div>
-	<div class="item2"></div>
-	<div class="item3"></div>
-
+	<!-- demo: .item$@3*5 -->
 	<div class="item3"></div>
 	<div class="item4"></div>
 	<div class="item5"></div>
 	<div class="item6"></div>
 	<div class="item7"></div>
 
-	<!-- ID & 类属性 -->
-	<!-- demo: #header or .title -->
-	<div id="header"></div>
-	<div class="title"></div>
+	<!-- 综合例子：#page>div.logo+ul#navigation>li*5>a{item $} -->
+	<div id="page">
+		<div class="logo"></div>
+		<ul id="navigation">
+			<li><a href="">item 1</a></li>
+			<li><a href="">item 2</a></li>
+			<li><a href="">item 3</a></li>
+			<li><a href="">item 4</a></li>
+			<li><a href="">item 5</a></li>
+		</ul>
+	</div>
 
 </body>
 </html>
