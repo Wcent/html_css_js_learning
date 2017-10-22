@@ -43,7 +43,7 @@
 	</ul>
 
 	<!-- 分组：() -->
-	<!-- demo: div>(header>ul>li*3>a)+(footer>p) -->
+	<!-- demo: div>(header>ul>li*3>a)+footer>p -->
 	<div>
 		<header>
 			<ul>
@@ -57,23 +57,60 @@
 		</footer>
 	</div>
 
-	<!-- ID & 类属性 -->
+	<!-- ID & CLASS -->
 	<!-- demo: #header -->
 	<div id="header"></div>
 	<!-- demo: .title -->
 	<div class="title"></div>
+	<!-- demo: div#header+div.page+div#footer.class1.class2.class3 -->
+	<div id="header"></div>
+	<div class="page"></div>
+	<div id="footer" class="class1 class2 class3"></div>
+
+	<!-- 指定属性：[attr] -->
+	<!-- demo: td[title="hello world" colspan=3] -->
+	<td title="hello world" colspan="3"></td>
 
 	<!-- 自增符号：$ -->
 	<!-- demo: #title$*3 -->
 	<div id="title1"></div>
 	<div id="title2"></div>
 	<div id="title3"></div>
+	<!-- demo: ul>li.item$$$*3 -->
+	<ul>
+		<li class="item001"></li>
+		<li class="item002"></li>
+		<li class="item003"></li>
+	</ul>
 	<!-- demo: .item$@3*5 -->
 	<div class="item3"></div>
 	<div class="item4"></div>
 	<div class="item5"></div>
 	<div class="item6"></div>
 	<div class="item7"></div>
+	<!-- demo: #title$@-*3 -->
+	<div id="title3"></div>
+	<div id="title2"></div>
+	<div id="title1"></div>
+	<!-- demo: #title$@-2*3 -->
+	<div id="title4"></div>
+	<div id="title3"></div>
+	<div id="title2"></div>
+
+	<!-- Text: {} -->
+	<!-- demo: a{Click me} -->
+	<a href="">Click me</a>
+
+	<!-- demo: a{Click }+b{here} -->
+	<a href="">Click </a><b>here</b>
+	<!-- '{}' after '>' demo: a>{Click }+b{here} -->
+	<a href="">Click <b>here</b></a>
+	
+	<!-- demo: p{Click }+a{here}+{ to continue} -->
+	<p>Click </p>
+	<a href="">here</a> to continue
+	<!-- '{}' after '>' demo: p>{Click }+a{here}+{to continue} -->
+	<p>Click <a href="">here</a> to continue</p>
 
 	<!-- 综合例子：#page>div.logo+ul#navigation>li*5>a{item $} -->
 	<div id="page">
